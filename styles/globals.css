@@ -1,16 +1,109 @@
+h1,p,footer {
+  margin: 0;
+  padding: 0;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  transition: .3s;
+  color: inherit;
+}
+
+a:hover {
+  color: #FF0000;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: var(--background);
+}
+
+nav.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 60px;
+}
+
+nav a {
+  font-weight: bold;
+}
+
+nav .search-box {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+nav .search-box input{
+  width: 220px;
+  height: 45px;
+  border: none;
+  padding-left: 42px;
+}
+
+nav .search-box::before {
+  content: url('/assets/icon-search.svg');
+  position: absolute;
+  width: 24px;
+  height: 23px;
+  left: 13px;
+}
+
+nav input::placeholder {
+  font-family: "Roboto";
+  font-size: 18px;
+  color: #9C9696;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  gap:0 1rem;
+}
+
+footer a {
+  font-weight: bold;
+}
+
+footer a:last-child {
+  height: 166px;
+  width: 437px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+footer a:last-child:hover {
+  color: #FF0000
+}
+
+footer a:last-child::after {
+  transition: .3s;
+  opacity: 0;
+  margin-left: -5px;
+  content: url('/assets/icon-arrow.svg');
+}
+
+footer a:last-child:hover::after {
+  opacity: 1;
+  margin-left: 14px;
 }
